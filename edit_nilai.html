@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Edit Nilai Siswa</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background: #f5f5f5;
+      }
+
+      /* HEADER */
+
+      .header {
+        background: linear-gradient(135deg, #8b0000, #c1121f);
+        color: white;
+        padding: 25px 40px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header h1 {
+        font-size: 30px;
+      }
+
+      .kembali {
+        text-decoration: none;
+        color: white;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+
+      /* FORM */
+
+      .container {
+        width: 90%;
+        max-width: 700px;
+        margin: 40px auto;
+      }
+
+      .card {
+        background: white;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h2 {
+        color: #8b0000;
+        margin-bottom: 25px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 8px;
+        font-weight: 500;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 16px;
+      }
+
+      input:focus,
+      select:focus {
+        outline: none;
+        border-color: #8b0000;
+      }
+
+      .button-group {
+        margin-top: 30px;
+        display: flex;
+        gap: 15px;
+      }
+
+      .btn-update {
+        flex: 1;
+        background: #f59e0b;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .btn-batal {
+        flex: 1;
+        background: #888;
+        color: white;
+        border: none;
+        padding: 12px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Edit Nilai Siswa</h1>
+
+      <a href="kelola_nilai.html" class="kembali"> Kembali </a>
+    </div>
+
+    <div class="container">
+      <div class="card">
+        <h2>Form Edit Nilai</h2>
+
+        <form>
+          <label>ID Siswa</label>
+          <input type="text" value="S001" />
+
+          <label>Nama Siswa</label>
+          <input type="text" value="Budi" />
+
+          <label>Mata Pelajaran</label>
+          <input type="text" value="Tari Tradisional" />
+
+          <label>Nilai</label>
+          <input type="number" value="85" />
+
+          <div class="button-group">
+            <button type="submit" class="btn-update">Update</button>
+
+            <button type="button" class="btn-batal" onclick="window.location.href = 'kelola_nilai.html'">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
