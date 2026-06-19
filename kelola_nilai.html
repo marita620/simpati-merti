@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Kelola Nilai Siswa</title>
+    <title>Kelola Nilai</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -20,20 +20,13 @@
         background: #f5f5f5;
       }
 
-      /* HEADER */
-
       .header {
         background: linear-gradient(135deg, #8b0000, #c1121f);
         color: white;
         padding: 25px 40px;
-
         display: flex;
         justify-content: space-between;
         align-items: center;
-      }
-
-      .header h1 {
-        font-size: 32px;
       }
 
       .kembali {
@@ -44,136 +37,82 @@
         border-radius: 10px;
       }
 
-      /* CONTAINER */
-
       .container {
         width: 90%;
-        margin: 30px auto;
-      }
-
-      /* CARD */
-
-      .card {
-        background: white;
-        padding: 25px;
-        border-radius: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
-
-      /* TOMBOL */
-
-      .btn-tambah {
-        background: #8b0000;
-        color: white;
-
-        border: none;
-
-        padding: 12px 20px;
-
-        border-radius: 10px;
-
-        cursor: pointer;
-
-        margin-bottom: 20px;
-      }
-
-      .btn-edit {
-        background: #f59e0b;
-        color: white;
-
-        border: none;
-
-        padding: 8px 15px;
-
-        border-radius: 8px;
-
-        cursor: pointer;
-      }
-
-      .btn-hapus {
-        background: #dc2626;
-        color: white;
-
-        border: none;
-
-        padding: 8px 15px;
-
-        border-radius: 8px;
-
-        cursor: pointer;
-      }
-
-      /* TABEL */
-
-      table {
-        width: 100%;
-        border-collapse: collapse;
-      }
-
-      th {
-        background: #8b0000;
-        color: white;
-        padding: 12px;
-      }
-
-      td {
-        padding: 12px;
-        text-align: center;
-        border-bottom: 1px solid #ddd;
+        margin: 40px auto;
       }
 
       .judul {
-        color: #8b0000;
-        margin-bottom: 20px;
-      }
-
-      .kosong {
         text-align: center;
-        color: #888;
-        padding: 30px;
+        color: #8b0000;
+        margin-bottom: 30px;
       }
 
-      .btn-edit,
-      .btn-hapus {
-        margin: 0 3px;
+      .mapel-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        width: 280px;
+        background: white;
+        border-radius: 20px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+      }
+
+      .icon {
+        font-size: 50px;
+        margin-bottom: 15px;
+      }
+
+      .card h3 {
+        color: #8b0000;
+        margin-bottom: 10px;
+      }
+
+      .card p {
+        color: #666;
       }
     </style>
   </head>
 
   <body>
     <div class="header">
-      <h1>Kelola Nilai Siswa</h1>
-
-      <a href="pengajar.html" class="kembali"> Kembali </a>
+      <h1>Kelola Nilai</h1>
+      <a href="pengajar.html" class="kembali">Kembali</a>
     </div>
 
     <div class="container">
-      <div class="card">
-        <h2 class="judul">Data Nilai Siswa</h2>
+      <h2 class="judul">Pilih Mata Pelajaran</h2>
 
-        <button class="btn-tambah" onclick="window.location.href = 'tambah_nilai.html'">+ Tambah Nilai</button>
+      <div class="mapel-container">
+        <div class="card" onclick="window.location.href = 'nilai_matematika.html'">
+          <div class="icon">🧮</div>
+          <h3>Matematika</h3>
+          <p>Kelola nilai Matematika</p>
+        </div>
 
-        <table>
-          <tr>
-            <th>ID Nilai</th>
-            <th>Nama Siswa</th>
-            <th>Mata Pelajaran</th>
-            <th>Nilai</th>
-            <th>Aksi</th>
-          </tr>
+        <div class="card" onclick="window.location.href = 'nilai_bindo.html'">
+          <div class="icon">📖</div>
+          <h3>Bahasa Indonesia</h3>
+          <p>Kelola nilai Bahasa Indonesia</p>
+        </div>
 
-          <tr>
-            <td>N001</td>
-            <td>Nama Siswa</td>
-            <td>Matematika</td>
-            <td>85</td>
-            <td>
-              <button class="btn-edit" onclick="window.location.href = 'edit_nilai.html'">Edit</button>
-
-              <button class="btn-hapus" onclick="return confirm('Yakin ingin menghapus data?');">Hapus</button>
-            </td>
-          </tr>
-        </table>
+        <div class="card" onclick="window.location.href = 'nilai_binggris.html'">
+          <div class="icon">🔤</div>
+          <h3>Bahasa Inggris</h3>
+          <p>Kelola nilai Bahasa Inggris</p>
+        </div>
       </div>
     </div>
   </body>

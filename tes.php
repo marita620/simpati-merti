@@ -49,7 +49,7 @@
         background: rgba(255, 255, 255, 0.2);
       }
 
-      /* MAIN */
+      /* KONTEN */
 
       .main {
         flex: 1;
@@ -66,7 +66,11 @@
 
       .header h1 {
         color: #8b0000;
-        margin-bottom: 10px;
+      }
+
+      .card-container {
+        display: flex;
+        justify-content: center;
       }
 
       .card {
@@ -85,28 +89,33 @@
       }
 
       .deskripsi {
+        font-size: 16px;
         color: #555;
         margin-bottom: 25px;
-        line-height: 1.8;
       }
 
       .menu-btn {
         padding: 12px 25px;
         border: none;
         border-radius: 10px;
+
         background: linear-gradient(90deg, #8b0000, #dc2626);
+
         color: white;
         font-size: 16px;
         cursor: pointer;
+
         transition: 0.3s;
       }
 
       .menu-btn:hover {
         transform: translateY(-2px);
+
         box-shadow: 0 8px 15px rgba(220, 38, 38, 0.3);
       }
     </style>
   </head>
+
   <body>
     <div class="sidebar">
       <div style="text-align: center; margin-bottom: 40px">
@@ -115,11 +124,9 @@
         <h2 style="margin-top: 15px">SIMPATI MERTI</h2>
       </div>
 
-      <a href="pengajar.html">🏠 Beranda</a>
-
-      <a href="kelola_nilai.html"> 📝 Kelola Nilai Siswa </a>
-
-      <a href="login.html"> 🚪 Logout </a>
+      <a href="#">🏠 Beranda</a>
+      <a href="kelola_nilai.html">📝 Kelola Nilai Siswa</a>
+      <a href="login.html">🚪 Logout</a>
     </div>
 
     <div class="main">
@@ -130,11 +137,11 @@
       </div>
 
       <div class="card">
-        <h3>Halo, Pengajar 👋</h3>
+        <h3>Halo, Pengajar CANTIK👋</h3>
 
-        <p class="deskripsi">Gunakan menu Kelola Nilai Siswa untuk mengelola nilai siswa berdasarkan mata pelajaran Matematika, Bahasa Indonesia, dan Bahasa Inggris.</p>
+        <p class="deskripsi">Gunakan menu Kelola Nilai Siswa untuk menambah, mengubah, dan menghapus nilai siswa.</p>
 
-        <button class="menu-btn" onclick="window.location.href = 'kelola_nilai.html'">Kelola Nilai Siswa</button>
+        <button class="menu-btn" onclick="window.location.href = 'kelola-nilai.html'">Kelola Nilai Siswa</button>
       </div>
     </div>
   </body>
