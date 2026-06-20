@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kelola Data Siswa</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+    background:linear-gradient(135deg,#7F1D1D,#B91C1C);
+    color:white;
+    padding:25px 45px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.header h1{
+    font-size:30px;
+    font-weight:700;
+}
+
+.kembali{
+    text-decoration:none;
+    color:white;
+    background:rgba(255,255,255,.15);
+    padding:12px 22px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.kembali:hover{
+    background:white;
+    color:#8B0000;
+}
+
+/* ================= CONTAINER ================= */
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:40px auto;
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+    background:white;
+    border-radius:25px;
+    padding:35px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+}
+
+.judul{
+
+    color:#8B0000;
+    margin-bottom:5px;
+    font-size:28px;
+
+}
+
+.subjudul{
+
+    color:#777;
+    margin-bottom:30px;
+
+}
+
+/* ================= BUTTON ================= */
+
+.button-group{
+
+    display:flex;
+    gap:15px;
+    margin-bottom:35px;
+
+}
+
+.button-group button{
+
+    border:none;
+    padding:14px 28px;
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+
+}
+
+.button-group button:hover{
+
+    transform:translateY(-3px);
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.btn-tambah{
+
+    background:#8B0000;
+
+}
+
+.btn-cari{
+
+    background:#8B0000;
+
+}
+
+/* ================= FORM ================= */
+
+.form-box{
+
+    display:none;
+
+    background:#FAFAFA;
+    border:2px solid #EFEFEF;
+    border-radius:20px;
+    padding:30px;
+
+    animation:muncul .3s;
+
+}
+
+.form-box h3{
+
+    color:#8B0000;
+    margin-bottom:25px;
+    font-size:22px;
+
+}
+
+.form-box input,
+.form-box select{
+
+    width:100%;
+    padding:14px;
+    margin-bottom:18px;
+
+    border:1px solid #D1D5DB;
+    border-radius:10px;
+
+    outline:none;
+    transition:.2s;
+
+}
+
+.form-box input:focus,
+.form-box select:focus{
+
+    border-color:#8B0000;
+    box-shadow:0 0 0 3px rgba(139,0,0,.1);
+
+}
+
+.form-box button{
+
+    background:#8B0000;
+    color:white;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.form-box button:hover{
+
+    background:#A00000;
+
+}
+
+/* ================= TABLE ================= */
+
+table{
+
+    width:100%;
+    border-collapse:collapse;
+    margin-top:30px;
+
+}
+
+th{
+
+    background:#8B0000;
+    color:white;
+    padding:15px;
+
+}
+
+td{
+
+    padding:15px;
+    border-bottom:1px solid #EEE;
+    text-align:center;
+
+}
+
+tr:hover{
+
+    background:#FAFAFA;
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes muncul{
+
+    from{
+
+        opacity:0;
+        transform:translateY(-15px);
+
+    }
+
+    to{
+
+        opacity:1;
+        transform:translateY(0);
+
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="header">
+
+<h1>Kelola Data Siswa</h1>
+
+<a href="pengajar.html" class="kembali">
+Kembali
+</a>
+
+</div>
+
+<div class="container">
+
+<div class="card">
+
+<h2 class="judul">
+Data Siswa
+</h2>
+<p class="subjudul">
+Tambah atau cari data siswa yang terdaftar pada sistem.
+</p>
+
+<div class="button-group">
+
+<button class="btn-tambah" onclick="tampilTambah()">
+➕ Tambah Data
+</button>
+
+<button class="btn-cari" onclick="tampilCari()">
+🔍 Cari Data
+</button>
+
+</div>
+
+<!-- ================= TAMBAH ================= -->
+
+<div id="formTambah" class="form-box">
+
+<h3>Tambah Data Siswa</h3>
+
+<form action="" method="POST">
+
+<input
+type="text"
+name="id_siswa"
+placeholder="ID Siswa"
+required>
+
+<input
+type="text"
+name="nama"
+placeholder="Nama Siswa"
+required>
+
+<input
+type="text"
+name="alamat"
+placeholder="Alamat"
+required>
+
+<select name="jk">
+
+<option value="">Jenis Kelamin</option>
+
+<option>Laki-laki</option>
+
+<option>Perempuan</option>
+
+</select>
+
+<input
+type="text"
+name="nohp"
+placeholder="No HP">
+
+<input
+type="date"
+name="tgl_lahir">
+
+<button
+type="submit"
+name="simpan">
+
+Simpan
+
+</button>
+
+</form>
+
+</div>
+
+<!-- ================= CARI ================= -->
+
+<div id="formCari" class="form-box">
+
+<h3>Cari Data Siswa</h3>
+
+<form action="" method="GET">
+
+<input
+type="text"
+name="id"
+placeholder="Masukkan ID Siswa">
+
+<button
+type="submit">
+
+Cari
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function sembunyikan(){
+
+document.getElementById("formTambah").style.display="none";
+document.getElementById("formCari").style.display="none";
+
+}
+
+function tampilTambah(){
+
+sembunyikan();
+
+document.getElementById("formTambah").style.display="block";
+
+}
+
+function tampilCari(){
+
+sembunyikan();
+
+document.getElementById("formCari").style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
