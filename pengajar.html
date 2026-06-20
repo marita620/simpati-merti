@@ -1,148 +1,250 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Pengajar - SIMPATI MERTI</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<title>Dashboard Pengajar - SIMPATI MERTI</title>
 
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-      body {
-        background: #f5f5f5;
-        display: flex;
-      }
+<style>
 
-      /* SIDEBAR */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-      .sidebar {
-        width: 260px;
-        min-height: 100vh;
-        background: linear-gradient(180deg, #8b0000, #c1121f);
-        color: white;
-        padding: 25px;
-      }
+body{
+    display:flex;
+    background:#f5f5f5;
+}
 
-      .sidebar h2 {
-        text-align: center;
-        margin-bottom: 30px;
-      }
+/* ================= SIDEBAR ================= */
 
-      .sidebar a {
-        display: block;
-        text-decoration: none;
-        color: white;
-        padding: 12px 15px;
-        margin-bottom: 10px;
-        border-radius: 10px;
-        transition: 0.3s;
-      }
+.sidebar{
+    width:260px;
+    min-height:100vh;
+    background:linear-gradient(180deg,#8B0000,#C1121F);
+    color:white;
+    padding:25px;
+}
 
-      .sidebar a:hover {
-        background: rgba(255, 255, 255, 0.2);
-      }
+.logo{
+    text-align:center;
+    margin-bottom:40px;
+}
 
-      /* KONTEN */
+.logo img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:5px solid #FFD166;
+}
 
-      .main {
-        flex: 1;
-        padding: 30px;
-      }
+.logo h2{
+    margin-top:15px;
+}
 
-      .header {
-        background: white;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        margin-bottom: 25px;
-      }
+.sidebar a{
+    display:block;
+    text-decoration:none;
+    color:white;
+    padding:12px 15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    transition:.3s;
+}
 
-      .header h1 {
-        color: #8b0000;
-      }
+.sidebar a:hover{
+    background:rgba(255,255,255,.2);
+}
 
-      .card-container {
-        display: flex;
-        justify-content: center;
-      }
+.active{
+    background:rgba(255,255,255,.2);
+}
 
-      .card {
-        max-width: 700px;
-        margin: auto;
-        background: white;
-        padding: 40px;
-        border-radius: 25px;
-        text-align: center;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
+/* ================= MAIN ================= */
 
-      .card h3 {
-        color: #8b0000;
-        margin-bottom: 15px;
-      }
+.main{
+    flex:1;
+    padding:30px;
+}
 
-      .deskripsi {
-        font-size: 16px;
-        color: #555;
-        margin-bottom: 25px;
-      }
+/* HEADER */
 
-      .menu-btn {
-        padding: 12px 25px;
-        border: none;
-        border-radius: 10px;
+.header{
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    margin-bottom:25px;
+}
 
-        background: linear-gradient(90deg, #8b0000, #dc2626);
+.header h1{
+    color:#8B0000;
+    margin-bottom:10px;
+}
 
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
+/* CARD */
 
-        transition: 0.3s;
-      }
+.card{
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
 
-      .menu-btn:hover {
-        transform: translateY(-2px);
+.card h2{
+    color:#8B0000;
+    margin-bottom:20px;
+}
 
-        box-shadow: 0 8px 15px rgba(220, 38, 38, 0.3);
-      }
-    </style>
-  </head>
+.card p{
+    color:#555;
+    line-height:28px;
+    margin-bottom:30px;
+}
 
-  <body>
-    <div class="sidebar">
-      <div style="text-align: center; margin-bottom: 40px">
-        <img src="logomerti.jpeg" alt="Logo" style="width: 120px; height: 120px; border-radius: 50%; border: 5px solid #ffd166" />
+/* MENU */
 
-        <h2 style="margin-top: 15px">SIMPATI MERTI</h2>
-      </div>
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-      <a href="#">🏠 Beranda</a>
-      <a href="kelola_nilai.html">📝 Kelola Nilai Siswa</a>
-      <a href="login.html">🚪 Logout</a>
-    </div>
+.menu-card{
 
-    <div class="main">
-      <div class="header">
-        <h1>Dashboard Pengajar</h1>
+    background:#fff7f7;
 
-        <p>Selamat Datang di Sistem Informasi Penilaian Sanggar Merti Desa.</p>
-      </div>
+    border:2px solid #f3d1d1;
 
-      <div class="card">
-        <h3>Halo, Pengajar CANTIK👋</h3>
+    border-radius:15px;
 
-        <p class="deskripsi">Gunakan menu Kelola Nilai Siswa untuk menambah, mengubah, dan menghapus nilai siswa.</p>
+    padding:25px;
 
-        <button class="menu-btn" onclick="window.location.href = 'kelola-nilai.html'">Kelola Nilai Siswa</button>
-      </div>
-    </div>
-  </body>
+    text-align:center;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+.menu-card h3{
+
+    color:#8B0000;
+
+    margin-bottom:10px;
+
+}
+
+.menu-card p{
+
+    font-size:14px;
+
+    color:#666;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<img src="logomerti.jpeg">
+
+<h2>SIMPATI MERTI</h2>
+
+</div>
+
+<a href="#" class="active">🏠 Beranda</a>
+
+<a href="kelola_nilai.html">📝 Kelola Nilai Siswa</a>
+
+<a href="kelola_siswa.html">👨 Kelola Data Siswa</a>
+
+<a href="kelola_mapel.html">📚 Kelola Data Mapel</a>
+
+<a href="login.html">🚪 Logout</a>
+
+</div>
+
+<!-- MAIN -->
+
+<div class="main">
+
+<div class="header">
+
+<h1>Dashboard Pengajar</h1>
+
+<p>Selamat datang di Sistem Informasi Penilaian Sanggar Merti Desa.</p>
+
+</div>
+
+<div class="card">
+
+<h2>Halo, Pengajar 👋</h2>
+
+<p>
+
+Silakan pilih menu yang tersedia untuk mengelola data pada sistem.
+Menu disusun sesuai dengan proses bisnis yang terdapat pada Activity Diagram.
+
+</p>
+
+<div class="menu">
+
+<div class="menu-card"
+onclick="window.location='kelola_nilai.html'">
+
+<h3>📝 Kelola Nilai</h3>
+
+<p>Tambah, Edit dan Hapus Nilai Siswa</p>
+
+</div>
+
+<div class="menu-card"
+onclick="window.location='kelola_siswa.html'">
+
+<h3>👨 Kelola Data Siswa</h3>
+
+<p>Tambah Data dan Cari Data Siswa</p>
+
+</div>
+
+<div class="menu-card"
+onclick="window.location='kelola_mapel.html'">
+
+<h3>📚 Kelola Data Mapel</h3>
+
+<p>Tambah, Edit dan Hapus Mata Pelajaran</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
 </html>
