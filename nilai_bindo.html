@@ -111,6 +111,27 @@
         color: #777;
         padding: 25px;
       }
+
+      input{
+        width:100%;
+        padding:12px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        margin-top:5px;
+      }
+
+      label{
+          font-weight:600;
+      }
+
+      hr{
+          border:none;
+          border-top:1px solid #ddd;
+      }
+
+      form{
+          margin-top:20px;
+      }
     </style>
   </head>
 
@@ -126,11 +147,9 @@
         <h2 class="judul">Data Nilai Bahasa Indonesia</h2>
 
         <div class="button-group">
-          <button class="btn-tambah" onclick="window.location.href = 'tambah_nilai_bindo.html'">+ Tambah Nilai</button>
-
-          <button class="btn-edit" onclick="window.location.href = 'cari_edit_nilai_bindo.html'">Edit Nilai</button>
-
-          <button class="btn-hapus" onclick="window.location.href = 'cari_hapus_nilai_bindo.html'">Hapus Nilai</button>
+          <button class="btn-tambah" onclick="tampilTambah()"> + Tambah Nilai </button>
+          <button class="btn-edit" onclick="tampilEdit()">Edit Nilai</button>
+          <button class="btn-hapus" onclick="tampilHapus()">Hapus Nilai</button>
         </div>
 
         <table>
@@ -144,7 +163,72 @@
             <td colspan="3" class="kosong">Belum ada data nilai Bahasa Indonesia.</td>
           </tr>
         </table>
-      </div>
+        <hr style="margin:30px 0">
+        <div id="formTambah" style="display:none;">
+          <h2 class="judul">Tambah Nilai</h2>
+          <form>
+            <label> ID Nilai</label>
+            <input type="text"><br><br>
+            <label> Nama Siswa</label>
+            <input type="text"><br><br>
+            <label> Nilai</label>
+            <input type="number"><br><br>
+            <button class="btn-tambah">Simpan</button>
+          </form>
+        </div>
+
+        <div id="formEdit" style="display:none;">
+          <h2 class="judul">Edit Nilai</h2>
+          <label>ID Nilai</label><br>
+          <input type="text"><br><br>
+          <button class="btn-edit">Cari</button>
+          <hr></hr>
+
+          <label>Nama Siswa</label><br>
+          <input type="text"><br><br>
+          <label>Nilai</label><br>
+          <input type="number"><br><br>
+          <button class="btn-edit">Simpan Perubahan</button>
+        </div>
+
+        <div id="formHapus" style="display:none;">
+          <h2 class="judul">Hapus Nilai</h2>
+          <label>ID Nilai</label><br>
+          <input type="text"><br><br>
+          <button class="btn-hapus"> Cari </button>
+          <hr><br>
+          <p>Nama Siswa :</p>
+          <p>Nilai :</p>
+          <button class="btn-hapus">Hapus Data</button>
+        </div>
     </div>
+
+<script>
+
+function sembunyikanSemua(){
+    document.getElementById("formTambah").style.display="none";
+    document.getElementById("formEdit").style.display="none";
+    document.getElementById("formHapus").style.display="none";
+
+}
+
+function tampilTambah(){
+    sembunyikanSemua();
+    document.getElementById("formTambah").style.display="block";
+}
+
+function tampilEdit(){
+    sembunyikanSemua();
+    document.getElementById("formEdit").style.display="block";
+
+}
+
+function tampilHapus(){
+    sembunyikanSemua();
+    document.getElementById("formHapus").style.display="block";
+
+}
+
+</script>
   </body>
 </html>
